@@ -18,8 +18,16 @@
 		"drift",
 		"cli"
 	],
-	"author": "",
-	"license": "ISC",
+	"author": "Lorenzo Pantano",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lorenzopantano/envdrift.git"
+	},
+	"bugs": {
+		"url": "https://github.com/lorenzopantano/envdrift/issues"
+	},
+	"homepage": "https://github.com/lorenzopantano/envdrift#readme",
 	"dependencies": {
 		"chalk": "^5.6.2",
 		"commander": "^15.0.0",

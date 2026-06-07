@@ -92,3 +92,13 @@ src/
   autofix.ts   append missing keys to files
   index.ts     CLI entry point (commander)
 ```
+
+## Contributing
+
+Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for setup,
+dev workflow, and conventions. Please follow our
+[Code of Conduct](CODE_OF_CONDUCT.md).
+
+## License
+
+[MIT](LICENSE) © Lorenzo Pantano
