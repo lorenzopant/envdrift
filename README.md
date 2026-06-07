@@ -1,13 +1,13 @@
-# envdrift
+# envdrift 🌱⚡
 
 CLI that detects drift between `.env*` files in a project — catches the case
 where a variable is set in `.env.local` but missing from `.env.production`
 (or vice versa) before it causes a runtime surprise.
 
 It compares **keys only**, never values — no secrets are read into memory or
-printed.
+printed. 🔒
 
-## Install / run
+## 📦 Install / run
 
 Published as a scoped package — install globally and run as `envdrift`:
 
@@ -38,7 +38,7 @@ pnpm dev [dir]
 
 `[dir]` defaults to the current directory.
 
-## Usage
+## 🚀 Usage
 
 ```bash
 envdrift [dir] [options]
@@ -86,7 +86,7 @@ envdrift . --fail-on-drift
 Use `--md` to produce a file you can attach to CI artifacts or PRs if you want
 drift to be visible in review regardless of whether the build fails.
 
-## How it works
+## ⚙️ How it works
 
 1. **Scan** — recursively find `.env*` files (skips `node_modules`, `.git`,
    build output dirs).
@@ -96,7 +96,7 @@ drift to be visible in review regardless of whether the build fails.
 4. **Report** — render as a terminal matrix, optionally a Markdown file, and
    optionally autofix by appending missing keys with empty values.
 
-## Project layout
+## 🗂️ Project layout
 
 ```
 src/
@@ -108,12 +108,12 @@ src/
   index.ts     CLI entry point (commander)
 ```
 
-## Contributing
+## 🤝 Contributing
 
 Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for setup,
 dev workflow, and conventions. Please follow our
 [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## License
+## 📄 License
 
 [MIT](LICENSE) © Lorenzo Pantano
