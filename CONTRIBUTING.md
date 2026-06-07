@@ -6,7 +6,7 @@ focused and the bar for "is this needed" high.
 ## Setup
 
 ```bash
-git clone https://github.com/lorenzopantano/envdrift.git
+git clone https://github.com/lorenzopant/envdrift.git
 cd envdrift
 pnpm install
 ```

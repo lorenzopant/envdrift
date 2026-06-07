@@ -41,7 +41,7 @@ discussions) and when an individual is officially representing the project.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the maintainers via the contact listed on the
-[GitHub profile](https://github.com/lorenzopantano). All complaints will be
+[GitHub profile](https://github.com/lorenzopant). All complaints will be
 reviewed and investigated promptly and fairly.
 
 ## Attribution

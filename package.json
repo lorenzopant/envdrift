@@ -22,12 +22,12 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/lorenzopantano/envdrift.git"
+		"url": "git+https://github.com/lorenzopant/envdrift.git"
 	},
 	"bugs": {
-		"url": "https://github.com/lorenzopantano/envdrift/issues"
+		"url": "https://github.com/lorenzopant/envdrift/issues"
 	},
-	"homepage": "https://github.com/lorenzopantano/envdrift#readme",
+	"homepage": "https://github.com/lorenzopant/envdrift#readme",
 	"dependencies": {
 		"chalk": "^5.6.2",
 		"commander": "^15.0.0",
