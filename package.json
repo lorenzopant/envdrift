@@ -1,7 +1,7 @@
 {
 	"name": "envdrift",
 	"version": "0.1.0",
-	"description": "Detect drift between .env files in a project",
+	"description": "CLI that finds keys missing or extra across your .env files — catch config drift between local, staging, and production before it breaks a deploy.",
 	"type": "module",
 	"main": "dist/index.js",
 	"bin": {
