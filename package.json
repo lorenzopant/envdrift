@@ -10,7 +10,10 @@
 	"scripts": {
 		"dev": "tsx src/index.ts",
 		"build": "tsup src/index.ts --format esm --target node22 --clean",
-		"start": "node dist/index.js"
+		"start": "node dist/index.js",
+		"test": "tsx --test src/**/*.test.ts",
+		"typecheck": "tsc --noEmit",
+		"release": "node scripts/release.mjs"
 	},
 	"keywords": [
 		"env",

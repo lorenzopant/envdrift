@@ -17,14 +17,17 @@ Package manager is **pnpm** — please don't commit `package-lock.json` or
 ## Development
 
 ```bash
-pnpm dev [dir]      # run the CLI against a directory without building
-pnpm run build      # build with tsup -> dist/
-pnpm start [dir]    # run the built CLI
-npx tsc --noEmit    # type-check
+pnpm dev [dir]        # run the CLI against a directory without building
+pnpm run build        # build with tsup -> dist/
+pnpm start [dir]      # run the built CLI
+pnpm run typecheck    # tsc --noEmit
+pnpm test             # run the test suite (node:test, via tsx)
 ```
 
-Try your changes against a real (or fixture) directory of `.env*` files before
-opening a PR — there's no test suite yet, so manual verification matters.
+CI runs `typecheck`, `test`, and `build` on every push/PR
+(`.github/workflows/ci.yml`) — make sure they pass locally first. Also try
+your changes against a real (or fixture) directory of `.env*` files; tests
+cover the core logic but not the CLI's terminal output.
 
 ## Code style
 
@@ -54,11 +57,17 @@ One-time setup (maintainers only, done on npmjs.com):
    `publish.yml`, environment left blank (or set one and mirror it in the
    workflow's `environment:` key).
 
-To cut a release:
-1. Bump `version` in `package.json` (follow semver), commit it.
-2. Tag it: `git tag vX.Y.Z && git push origin vX.Y.Z`.
-3. Draft a GitHub Release from that tag and publish it — the workflow takes
-   it from there (build + `npm publish --provenance`).
+**The only sanctioned way to cut a release is `pnpm release <patch|minor|major>`**
+(`scripts/release.mjs`). Don't hand-edit `version` in `package.json` or tag
+manually — the script is the gate that keeps releases consistent. It:
+
+1. Refuses on a dirty working tree or any branch other than `main`.
+2. Runs `typecheck`, `test`, and `build` — aborts on the first failure.
+3. Bumps the version with `npm version <bump>` (creates the commit + tag).
+4. Pushes the commit and tag.
+
+After that, draft a GitHub Release from the new tag and publish it —
+`publish.yml` takes it from there (build + `npm publish --provenance`).
 
 ## Commit messages & PRs
 
