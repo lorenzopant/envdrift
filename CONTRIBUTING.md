@@ -42,6 +42,24 @@ If you add, remove, or change a flag, output format, or exit-code behavior,
 **update `README.md`** (options table, example output, "How it works" section)
 in the same PR. Stale docs are worse than no docs.
 
+## Releasing
+
+Publishing to npm is automated via `.github/workflows/publish.yml`, triggered
+by publishing a GitHub Release. It uses npm's **OIDC trusted publishing** —
+no `NPM_TOKEN` secret is stored in the repo.
+
+One-time setup (maintainers only, done on npmjs.com):
+1. Go to the `envdrift` package -> **Settings -> Trusted Publisher**.
+2. Add a GitHub Actions publisher: repo `lorenzopant/envdrift`, workflow
+   `publish.yml`, environment left blank (or set one and mirror it in the
+   workflow's `environment:` key).
+
+To cut a release:
+1. Bump `version` in `package.json` (follow semver), commit it.
+2. Tag it: `git tag vX.Y.Z && git push origin vX.Y.Z`.
+3. Draft a GitHub Release from that tag and publish it — the workflow takes
+   it from there (build + `npm publish --provenance`).
+
 ## Commit messages & PRs
 
 - Keep commits focused; one logical change per commit.
