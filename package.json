@@ -1,5 +1,5 @@
 {
-	"name": "envdrift",
+	"name": "@lorenzopant/envdrift",
 	"version": "1.0.0",
 	"description": "CLI that finds keys missing or extra across your .env files — catch config drift between local, staging, and production before it breaks a deploy.",
 	"type": "module",
@@ -32,6 +32,9 @@
 		"url": "https://github.com/lorenzopant/envdrift/issues"
 	},
 	"homepage": "https://github.com/lorenzopant/envdrift#readme",
+	"publishConfig": {
+		"access": "public"
+	},
 	"dependencies": {
 		"chalk": "^5.6.2",
 		"commander": "^15.0.0",

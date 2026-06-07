@@ -9,6 +9,21 @@ printed.
 
 ## Install / run
 
+Published as a scoped package — install globally and run as `envdrift`:
+
+```bash
+npm install -g @lorenzopant/envdrift
+envdrift [dir]
+```
+
+Or run it ad-hoc without installing:
+
+```bash
+npx @lorenzopant/envdrift [dir]
+```
+
+### From source
+
 ```bash
 pnpm install
 pnpm run build

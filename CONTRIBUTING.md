@@ -51,9 +51,15 @@ Publishing to npm is automated via `.github/workflows/publish.yml`, triggered
 by publishing a GitHub Release. It uses npm's **OIDC trusted publishing** —
 no `NPM_TOKEN` secret is stored in the repo.
 
+Published as the scoped package `@lorenzopant/envdrift` (the unscoped
+`envdrift` name is already taken by an unrelated publisher).
+
 One-time setup (maintainers only, done on npmjs.com):
-1. Go to the `envdrift` package -> **Settings -> Trusted Publisher**.
-2. Add a GitHub Actions publisher: repo `lorenzopant/envdrift`, workflow
+1. Publish version `1.0.0` manually once first (`npm publish --access public`
+   from a logged-in shell) — trusted publishers can only be linked to a
+   package that already exists.
+2. Go to the `@lorenzopant/envdrift` package -> **Settings -> Trusted Publisher**.
+3. Add a GitHub Actions publisher: repo `lorenzopant/envdrift`, workflow
    `publish.yml`, environment left blank (or set one and mirror it in the
    workflow's `environment:` key).
 
