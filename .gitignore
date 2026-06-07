@@ -1,0 +1,8 @@
+node_modules
+dist
+*.log
+.env
+.env.development
+.env.production
+.env.local
+.env.staging

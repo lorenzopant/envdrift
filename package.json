@@ -1,0 +1,34 @@
+{
+	"name": "envdrift",
+	"version": "0.1.0",
+	"description": "Detect drift between .env files in a project",
+	"type": "module",
+	"main": "dist/index.js",
+	"bin": {
+		"envdrift": "./dist/index.js"
+	},
+	"scripts": {
+		"dev": "tsx src/index.ts",
+		"build": "tsup src/index.ts --format esm --target node22 --clean",
+		"start": "node dist/index.js"
+	},
+	"keywords": [
+		"env",
+		"dotenv",
+		"drift",
+		"cli"
+	],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"chalk": "^5.6.2",
+		"commander": "^15.0.0",
+		"dotenv": "^17.4.2"
+	},
+	"devDependencies": {
+		"@types/node": "^25.9.2",
+		"tsup": "^8.5.1",
+		"tsx": "^4.22.4",
+		"typescript": "^6.0.3"
+	}
+}
