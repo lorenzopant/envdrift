@@ -64,16 +64,20 @@ One-time setup (maintainers only, done on npmjs.com):
    workflow's `environment:` key).
 
 **The only sanctioned way to cut a release is `pnpm release <patch|minor|major>`**
-(`scripts/release.mjs`). Don't hand-edit `version` in `package.json` or tag
-manually — the script is the gate that keeps releases consistent. It:
+(`scripts/release.mjs`, requires `gh` CLI authenticated). Don't hand-edit
+`version` in `package.json`, tag manually, or draft releases by hand — the
+script is the gate that keeps releases consistent end-to-end. It:
 
 1. Refuses on a dirty working tree or any branch other than `main`.
 2. Runs `typecheck`, `test`, and `build` — aborts on the first failure.
-3. Bumps the version with `npm version <bump>` (creates the commit + tag).
+3. Bumps the version with `npm version <bump>`, committing as
+   `chore: release vX.Y.Z 🚀` and creating the tag.
 4. Pushes the commit and tag.
+5. Creates the GitHub Release with `gh release create --generate-notes`
+   (auto-generated changelog from merged PRs/commits since the last tag).
 
-After that, draft a GitHub Release from the new tag and publish it —
-`publish.yml` takes it from there (build + `npm publish --provenance`).
+Publishing the release triggers `publish.yml`, which builds and runs
+`npm publish --provenance` — fully automated from `pnpm release` onward.
 
 ## Commit messages & PRs
 

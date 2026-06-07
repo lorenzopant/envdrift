@@ -1,7 +1,8 @@
 name: Publish to npm
 
-# Triggered by GitHub Releases — tag a version (e.g. v0.2.0), draft a release
-# from it, publish the release, and this workflow ships it to npm.
+# Triggered by GitHub Releases. Run `pnpm release <patch|minor|major>` to cut
+# one — it bumps the version, tags, and creates+publishes the GitHub Release
+# end-to-end, which fires this workflow to ship the package to npm.
 #
 # Uses npm's OIDC trusted publishing: no NPM_TOKEN secret needed. The package
 # must first be linked to this repo + workflow on npmjs.com (Settings ->
